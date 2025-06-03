@@ -1,8 +1,9 @@
-.todo-form {
+.item-form {
   margin-bottom: 2rem;
 }
 
-.todo-input {
+.item-input,
+.category-select {
   width: 96.25%;
   padding: 0.75rem;
   margin-bottom: 1rem;
@@ -12,12 +13,20 @@
   transition: border-color 0.2s ease;
 }
 
-.todo-input:focus {
+.item-input:focus,
+.category-select:focus {
   outline: none;
+  border-color: #b16e82;
   box-shadow: 0 0 0 3px rgba(177, 110, 130, 0.1);
 }
 
-.todo-submit {
+.category-select {
+  background-color: white;
+  cursor: pointer;
+  width: 100%;
+}
+
+.item-submit {
   width: 100%;
   padding: 0.75rem;
   background-color: #ce8198;
@@ -29,6 +38,6 @@
   transition: background-color 0.2s ease;
 }
 
-.todo-submit:hover {
+.item-submit:hover {
   background-color: #b16e82;
 } 

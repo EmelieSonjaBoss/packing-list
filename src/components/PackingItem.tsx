@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import './TodoItem.css';
+import './PackingItem.css';
 
-// Shape of a todo item that this component will display
-interface Todo {
+// Shape of a packing item that this component will display
+interface PackingItem {
   id: number;
   title: string;
   description: string;
@@ -10,14 +10,14 @@ interface Todo {
 }
 
 // Props that this component accepts
-interface TodoItemProps {
-  todo: Todo;
+interface ItemProps {
+  item: PackingItem;
   onToggle: (id: number) => void;
   onDelete: (id: number) => void;
 }
 
-// Component that displays a single todo item with completion and delete functionality
-export default function TodoItem({ todo, onToggle, onDelete }: TodoItemProps) {
+// Component that displays a single packing item
+export default function PackingItem({ item, onToggle, onDelete }: ItemProps) {
   // State for handling fade animations
   const [isRemoving, setIsRemoving] = useState(false);
   const [isEntering, setIsEntering] = useState(true);
@@ -34,7 +34,7 @@ export default function TodoItem({ todo, onToggle, onDelete }: TodoItemProps) {
   const handleDelete = () => {
     setIsRemoving(true);
     setTimeout(() => {
-      onDelete(todo.id);
+      onDelete(item.id);
     }, 200);
   };
 
@@ -42,21 +42,21 @@ export default function TodoItem({ todo, onToggle, onDelete }: TodoItemProps) {
   const handleToggle = () => {
     setIsRemoving(true);
     setTimeout(() => {
-      onToggle(todo.id);
+      onToggle(item.id);
       setIsRemoving(false);
     }, 200);
   };
 
   return (
-    <div className={`todo-item ${todo.completed ? 'completed' : ''} ${isRemoving ? 'removing' : ''} ${isEntering ? 'entering' : ''}`}>
-      <button onClick={handleToggle} className="todo-toggle">
-        {todo.completed ? '✓' : '○'}
+    <div className={`packing-item ${item.completed ? 'completed' : ''} ${isRemoving ? 'removing' : ''} ${isEntering ? 'entering' : ''}`}>
+      <button onClick={handleToggle} className="item-toggle">
+        {item.completed ? '✓' : '○'}
       </button>
-      <div className="todo-content">
-        <h3>{todo.title}</h3>
-        <p>{todo.description}</p>
+      <div className="item-content">
+        <h3>{item.title}</h3>
+        <p>{item.description}</p>
       </div>
-      <button onClick={handleDelete} className="todo-delete">
+      <button onClick={handleDelete} className="item-delete">
         ×
       </button>
     </div>

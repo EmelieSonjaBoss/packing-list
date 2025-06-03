@@ -1,11 +1,11 @@
-import TodoList from "./components/TodoList";
+import PackingList from './components/PackingList'
 
 function App() {
   return (
     <div className="container">
-      <TodoList />
+      <PackingList />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,4 +1,4 @@
-.todo-item {
+.packing-item {
   flex: 1;
   display: flex;
   align-items: center;
@@ -7,28 +7,28 @@
   border-radius: 4px;
 }
 
-.todo-item.completed {
+.packing-item.completed {
   opacity: 0.7;
 }
 
-.todo-content {
+.item-content {
   flex-grow: 1;
   margin: 0 1rem;
 }
 
-.todo-content h3 {
+.item-content h3 {
   margin: 0;
   color: #1f2937;
 }
 
-.todo-content p {
+.item-content p {
   margin: 0.25rem 0 0;
   color: #6b7280;
   font-size: 0.875rem;
 }
 
-.todo-toggle,
-.todo-delete {
+.item-toggle,
+.item-delete {
   background: none;
   border: none;
   cursor: pointer;
@@ -39,24 +39,24 @@
   transition: all 0.2s ease;
 }
 
-.todo-toggle {
+.item-toggle {
   color: #9ca3af;
 }
 
-.todo-item.completed .todo-toggle {
+.packing-item.completed .item-toggle {
   color: #b16e82;
 }
 
-.todo-delete {
+.item-delete {
   color: #9ca3af;
 }
 
-.todo-toggle:hover {
+.item-toggle:hover {
   background-color: #f3f4f6;
   color: #b16e82;
 }
 
-.todo-delete:hover {
+.item-delete:hover {
   background-color: #fee2e2;
   color: #ef4444;
 }
@@ -72,10 +72,10 @@
   to { opacity: 0; }
 }
 
-.todo-item.removing {
+.packing-item.removing {
   animation: fadeOut 0.2s ease forwards;
 }
 
-.todo-item.entering {
+.packing-item.entering {
   animation: fadeIn 0.2s ease;
 } 

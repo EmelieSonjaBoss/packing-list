@@ -7,11 +7,14 @@
   align-items: center;
   gap: 1rem;
   margin-bottom: 2rem;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
 }
 
 .category-manager-header h2 {
   margin: 0;
   color: #b16e82;
+  flex-grow: 1;
 }
 
 .back-button {

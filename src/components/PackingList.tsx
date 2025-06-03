@@ -150,6 +150,8 @@ export default function PackingList() {
           <>
             <h1>Packlista</h1>
             
+            <ItemForm onAdd={handleAdd} categories={categories} />
+
             {/* Category management section */}
             <div className="category-controls">
               <form onSubmit={handleAddCategory} className="category-form">
@@ -170,8 +172,6 @@ export default function PackingList() {
                 Hantera kategorier
               </button>
             </div>
-
-            <ItemForm onAdd={handleAdd} categories={categories} />
             
             {/* Filters and item count */}
             <div className="item-filters">
@@ -193,7 +193,7 @@ export default function PackingList() {
             {sortedCategories.map((category) => {
               const categoryItems = items.filter(item => 
                 item.categoryId === category.id && 
-                (showCompleted ? item.completed : !item.completed)
+                item.completed === showCompleted
               );
 
               if (categoryItems.length === 0) return null;

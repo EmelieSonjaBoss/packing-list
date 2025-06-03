@@ -1,5 +1,6 @@
 .packing-list {
   max-width: 800px;
+  min-height: 85vh;
   margin: 0 auto;
   padding: 2rem;
   background: white;
@@ -23,7 +24,7 @@ html {
 .category-controls {
   display: flex;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
   align-items: flex-start;
 }
 
@@ -115,24 +116,48 @@ html {
   font-size: 0.875rem;
 }
 
-/* View Transitions */
-.view-transition {
+/* General View Transitions - Only for category management */
+.category-management .view-transition {
   opacity: 1;
   transform: translateX(0);
   transition: all 0.3s ease-in-out;
-  width: 100%; /* Ensure consistent width */
+  width: 100%;
 }
 
-.view-exit {
+.category-management .view-exit {
   opacity: 0;
   transform: translateX(-20px);
   pointer-events: none;
 }
 
-.view-enter {
+.category-management .view-enter {
   opacity: 0;
   transform: translateX(20px);
   pointer-events: none;
+}
+
+/* Item List Specific Transitions */
+.items-view {
+  position: relative;
+}
+
+.item-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.item-list.entering {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.item-list.exiting {
+  opacity: 0;
+  transform: translateX(-20px);
 }
 
 /* Category Sections */
@@ -173,12 +198,6 @@ html {
   margin: 0;
   font-size: 1.25rem;
   flex-grow: 1;
-}
-
-.item-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .item-wrapper {

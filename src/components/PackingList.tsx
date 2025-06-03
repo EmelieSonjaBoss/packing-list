@@ -101,6 +101,37 @@ export default function PackingList() {
     setItems(items.filter(item => item.id !== id));
   };
 
+  // Moves an item up or down within its category
+  const moveItem = (id: number, direction: 'up' | 'down') => {
+    const itemToMove = items.find(item => item.id === id);
+    if (!itemToMove) return;
+
+    // Get items in the same category and with the same completed status
+    const categoryItems = items.filter(item => 
+      item.categoryId === itemToMove.categoryId && 
+      item.completed === itemToMove.completed
+    );
+    
+    const index = categoryItems.findIndex(item => item.id === id);
+    // Don't move if we're at the top/bottom of the category
+    if (
+      (direction === 'up' && index === 0) || 
+      (direction === 'down' && index === categoryItems.length - 1)
+    ) {
+      return;
+    }
+
+    // Find the indices in the main items array
+    const currentIndex = items.findIndex(item => item.id === id);
+    const swapWithId = categoryItems[direction === 'up' ? index - 1 : index + 1].id;
+    const swapIndex = items.findIndex(item => item.id === swapWithId);
+
+    // Create new array and swap items
+    const newItems = [...items];
+    [newItems[currentIndex], newItems[swapIndex]] = [newItems[swapIndex], newItems[currentIndex]];
+    setItems(newItems);
+  };
+
   const handleAdd = (title: string, description: string, categoryId: string) => {
     const newItem: PackingItem = {
       id: Date.now(),
@@ -199,13 +230,31 @@ export default function PackingList() {
               if (categoryItems.length === 0) return null;
 
               return (
-                <div key={category.id} className={`category-section ${isTransitioning ? 'exiting' : 'entered'}`}>
+                <div key={category.id} className={`category-section ${viewTransition}`}>
                   <div className="category-header">
                     <h2>{category.name}</h2>
                   </div>
                   <ul className="item-list">
-                    {categoryItems.map((item) => (
-                      <li key={item.id} className={`item-wrapper ${isTransitioning ? 'exiting' : ''}`}>
+                    {categoryItems.map((item, index) => (
+                      <li key={item.id} className="item-wrapper">
+                        <div className="sort-buttons">
+                          <button
+                            onClick={() => moveItem(item.id, 'up')}
+                            disabled={index === 0}
+                            className="sort-button"
+                            title="Flytta upp"
+                          >
+                            ↑
+                          </button>
+                          <button
+                            onClick={() => moveItem(item.id, 'down')}
+                            disabled={index === categoryItems.length - 1}
+                            className="sort-button"
+                            title="Flytta ner"
+                          >
+                            ↓
+                          </button>
+                        </div>
                         <ItemComponent
                           item={item}
                           onToggle={handleToggle}
@@ -220,7 +269,7 @@ export default function PackingList() {
             
             {/* Empty state message */}
             {items.filter(item => showCompleted ? item.completed : !item.completed).length === 0 && (
-              <p className={`empty-message ${isTransitioning ? 'exiting' : ''}`}>
+              <p className={`empty-message ${viewTransition}`}>
                 {showCompleted 
                   ? "Inga packade saker än!"
                   : "Inga saker att packa! Lägg till några saker i din packlista."}

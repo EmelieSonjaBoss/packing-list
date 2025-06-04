@@ -1,4 +1,4 @@
-# Packlista
+# Packlistan
 
 En packlista byggd med React och TypeScript. Appen hjälper dig hålla koll på vad som ska packas inför resan, med möjlighet att organisera saker i kategorier och markera dem som packade. Appen är utvecklad som en Progressive Web App (PWA) vilket betyder att den kan installeras på din enhet och användas offline.
 

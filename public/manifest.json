@@ -1,7 +1,7 @@
 {
-  "short_name": "Todo App",
-  "name": "Todo List Manager",
-  "description": "En enkel och effektiv todo-lista för att hålla koll på dina uppgifter",
+  "short_name": "Packlistan",
+  "name": "Packlistan",
+  "description": "En enkel och effektiv packlista för att hålla koll på vad du ska packa",
   "icons": [
     {
       "src": "favicon.ico",

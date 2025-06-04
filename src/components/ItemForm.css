@@ -40,4 +40,28 @@
 
 .item-submit:hover {
   background-color: #b16e82;
+}
+
+/* Mobile Styles */
+@media (max-width: 640px) {
+  .item-form {
+    padding: 0 0.5rem;
+  }
+
+  .item-input,
+  .category-select {
+    width: 90%;
+    font-size: 0.775rem;
+    padding: 0.625rem;
+  }
+
+  textarea.item-input {
+    min-height: 80px;
+    max-height: 150px;
+  }
+
+  .item-submit {
+    font-size: 0.775rem;
+    padding: 0.625rem;
+  }
 } 

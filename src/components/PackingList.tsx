@@ -185,7 +185,7 @@ export default function PackingList() {
 
             {/* Category management section */}
             <div className="category-controls">
-              <form onSubmit={handleAddCategory} className="category-form">
+              <form id="categoryForm" onSubmit={handleAddCategory} className="category-form">
                 <input
                   type="text"
                   value={newCategory}
@@ -193,15 +193,17 @@ export default function PackingList() {
                   placeholder="Lägg till ny kategori"
                   className="category-input"
                 />
-                <button type="submit" className="category-submit">Lägg till</button>
               </form>
-              <button
-                onClick={() => handleViewTransition(true)}
-                className="manage-categories-button"
-                disabled={isTransitioning}
-              >
-                Hantera kategorier
-              </button>
+              <div className="button-container">
+                <button type="submit" form="categoryForm" className="category-submit">Lägg till</button>
+                <button
+                  onClick={() => handleViewTransition(true)}
+                  className="manage-categories-button"
+                  disabled={isTransitioning}
+                >
+                  Hantera kategorier
+                </button>
+              </div>
             </div>
             
             {/* Filters and item count */}

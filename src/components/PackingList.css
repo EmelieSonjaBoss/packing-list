@@ -61,6 +61,7 @@ html {
   cursor: pointer;
   transition: background-color 0.2s ease;
   white-space: nowrap;
+  margin-right: 1rem;
 }
 
 .category-submit:hover {
@@ -274,7 +275,7 @@ html {
   }
 
   .category-input {
-    width: 90%;
+    width: 91.5%;
     font-size: 0.775rem;
   }
 
@@ -283,14 +284,30 @@ html {
     font-size: 0.775rem;
   }
 
-  .category-submit {
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-    font-size: 0.775rem;
+    margin-top: 0.5rem;
+  }
+
+  .category-submit {
+    width: 35%;
+    font-size: 0.875rem;
+    white-space: normal; 
+    overflow: hidden;
+    height: 38px;
+    padding: 0.15rem; 
   }
 
   .manage-categories-button {
-    width: 100%;
+    width: 65%;
     font-size: 0.875rem;
+    white-space: normal; 
+    overflow: hidden;
+    height: 38px;
+    padding: 0.15rem; 
   }
 
   .item-filters {

@@ -294,7 +294,7 @@ html {
 
   .category-submit {
     width: 35%;
-    font-size: 0.875rem;
+    font-size: 0.775rem;
     white-space: normal; 
     overflow: hidden;
     height: 38px;
@@ -303,7 +303,7 @@ html {
 
   .manage-categories-button {
     width: 65%;
-    font-size: 0.875rem;
+    font-size: 0.775rem;
     white-space: normal; 
     overflow: hidden;
     height: 38px;
@@ -318,12 +318,12 @@ html {
 
   .filter-button {
     width: 100%;
-    font-size: 0.875rem;
+    font-size: 0.775rem;
   }
 
   .item-count {
     text-align: center;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
   }
 
   .category-section {
@@ -346,5 +346,9 @@ html {
     font-size: 14px;
     width: 20px;
     height: 20px;
+  }
+
+  .empty-message {
+    font-size: 0.9rem;
   }
 } 

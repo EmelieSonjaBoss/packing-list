@@ -9,6 +9,7 @@
   margin-bottom: 2rem;
   flex-direction: row-reverse;
   justify-content: flex-start;
+  flex-wrap: nowrap;
 }
 
 .category-manager-header h2 {
@@ -26,6 +27,8 @@
   cursor: pointer;
   font-size: 0.875rem;
   transition: all 0.2s ease;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .back-button:hover {
@@ -155,3 +158,71 @@
   background-color: #6b7280;
   color: white;
 } 
+
+/* Mobile Styles */
+@media (max-width: 450px) {
+
+  .category-manager {
+    padding: 0.4rem;
+  }
+
+  .category-manager-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .back-button {
+    padding: 0.3rem 0.4rem;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .category-item {
+    padding: 0.6rem;
+  }
+
+  .category-info h3 {
+    font-size: 0.8rem;
+  }
+
+  .item-count {
+    font-size: 0.6rem !important;
+  }
+
+  .delete-button {
+    padding: 0.3rem 0.4rem;
+    font-size: 0.8rem;
+  }
+
+}
+
+/* Extra Small Mobile Styles */
+@media (max-width: 350px) {
+
+  .category-manager-header h2 {
+    font-size: 0.8rem;
+  }
+
+  .back-button {
+    padding: 0.25rem 0.3rem;
+    font-size: 0.6rem;
+  }
+
+  .category-item {
+    padding: 0.4rem;
+  }
+
+  .category-info h3 {
+    font-size: 0.6rem;
+  }
+
+  .item-count {
+    font-size: 0.5rem !important;
+  }
+
+  .delete-button {
+    padding: 0.25rem 0.3rem;
+    font-size: 0.6rem;
+  }
+
+}

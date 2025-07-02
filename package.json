@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://emeliesonjaboss.github.io/fed24d-the-last-todos-EmelieSonjaBoss",
+  "homepage": "https://emeliesonjaboss.github.io/packing-list",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
